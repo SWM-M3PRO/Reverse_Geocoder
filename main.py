@@ -3,7 +3,6 @@ import os
 import json
 from geopy.geocoders import Nominatim
 
-# Nominatim 객체 생성
 geo_local = Nominatim(user_agent='South Korea', timeout=None)
 
 
@@ -13,10 +12,10 @@ def get_address_from_coordinate(lat, lng):
         detail_address = address.address  # 상세주소
         address_parts = detail_address.split(',')
 
-        area1 = address_parts[-3].strip()  # 서울
-        area2 = address_parts[-4].strip()  # 은평구
-        area3 = address_parts[-5].strip()  # 대조동
-        full_address = f"{area1} {area2} {area3}"  # 서울 은평구 대조동
+        area1 = address_parts[-3].strip()
+        area2 = address_parts[-4].strip()
+        area3 = address_parts[-5].strip()
+        full_address = f"{area1} {area2} {area3}"
 
         return {
             "full_address": full_address,
